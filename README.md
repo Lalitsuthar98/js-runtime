@@ -14,8 +14,10 @@ It allows users to execute JavaScript files from the command line while supporti
 - Interactive REPL mode
 - Inline JavaScript execution using -e
 - Runtime version information using --version
+- support for console.log()
 - Error handling
 - Modern JavaScript support through QuickJS
+- support for arrays,object,function,loop,and ES6 features
 
 Supported JavaScript concepts include:
 
