@@ -1,8 +1,6 @@
 import sys
 import quickjs
 
-VERSION = "1.0.0"
-
 
 def py_log(*args):
     output = []
@@ -29,35 +27,6 @@ const console = {
 """)
 
 
-if len(sys.argv) == 2 and sys.argv[1] == "--version":
-    print(f"JS Runtime v{VERSION}")
-    print("Powered by QuickJS")
-    sys.exit(0)
-
-if len(sys.argv) == 3 and sys.argv[1] == "-e":
-    try:
-        ctx.eval(sys.argv[2])
-    except Exception as e:
-        print(f"Runtime Error: {e}")
-    sys.exit(0)
-
-if len(sys.argv) == 1:
-    print(f"JS Runtime v{VERSION}")
-    print("Type 'exit' to quit\n")
-
-    while True:
-        code = input("js > ")
-
-        if code.lower() == "exit":
-            break
-
-        try:
-            ctx.eval(code)
-        except Exception as e:
-            print(f"Runtime Error: {e}")
-
-    sys.exit(0)
-
 if len(sys.argv) != 2:
     print("Usage: python runtime.py <file.js>")
     sys.exit(1)
@@ -68,8 +37,7 @@ try:
     with open(js_file, "r", encoding="utf-8") as file:
         js_code = file.read()
 
-    ctx.eval(js_code)   
-    
+    ctx.eval(js_code)
 
 except FileNotFoundError:
     print(f"File not found: {js_file}")

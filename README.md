@@ -10,11 +10,12 @@ It allows users to execute JavaScript files from the command line while supporti
 
 ## Features
 
-* Execute JavaScript files
-* Support for console.log()
-* Command-line execution
-* Error handling
-* Modern JavaScript support through QuickJS
+- Execute JavaScript files
+- Interactive REPL mode
+- Inline JavaScript execution using -e
+- Runtime version information using --version
+- Error handling
+- Modern JavaScript support through QuickJS
 
 Supported JavaScript concepts include:
 
@@ -92,6 +93,24 @@ Example:
 
 ```bash
 python runtime.py examples/odd_even.js
+```
+
+### Show Version
+
+```bash
+python runtime.py --version
+```
+
+### Execute Inline JavaScript
+
+```bash
+python runtime.py -e "console.log(5+5)"
+```
+
+### Interactive REPL
+
+```bash
+python runtime.py
 ```
 
 ---
